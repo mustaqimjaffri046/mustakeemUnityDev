@@ -1,3 +1,18 @@
 [
-  
+  {
+    "title": "VR Medical Simulation",
+    "description": "Immersive surgical training simulator with realistic physics and haptic feedback",
+    "tech": "Unity, XR Toolkit, C#",
+    "category": "VR/XR",
+    "image": "images/projects/project1.jpg",
+    "link": "#"
+  },
+  {
+    "title": "Multiplayer Battle Arena",
+    "description": "Real-time competitive game with Netcode integration and matchmaking system",
+    "tech": "Unity, Netcode, Photon",
+    "category": "Multiplayer",
+    "image": "images/projects/project2.jpg",
+    "link": "#"
+  }
 ]
