@@ -218,6 +218,34 @@ document.querySelectorAll('.btn, .project-card, .skill-card').forEach(element =>
 */
 
 // ===================================
+// Load projects dynamically from projects.json
+fetch('projects.json')
+  .then(res => res.json())
+  .then(projects => {
+    const container = document.getElementById('projectsContainer');
+    projects.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <div class="project-image">
+          <img src="${p.image}" alt="${p.title}">
+          <span class="project-category">${p.category}</span>
+        </div>
+        <div class="project-content">
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+          <div class="project-tags">
+            ${p.tech.split(',').map(t => `<span>${t.trim()}</span>`).join('')}
+          </div>
+          <a href="${p.link}" class="project-link">View Details →</a>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  })
+  .catch(err => console.error("Error loading projects:", err));
+
+
 // Console Message
 // ===================================
 
